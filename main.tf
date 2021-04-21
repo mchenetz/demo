@@ -19,7 +19,7 @@ locals {
 }
 
 data "intersight_kubernetes_cluster" "workshop" {
-    name = "IKS_Demo-cluster"
+    name = "frontend-cluster"
 }
 
 output "url" {
