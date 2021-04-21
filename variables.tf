@@ -1,19 +1,18 @@
-variable "rootPassword" {
-  type=string
+variable "apikey" {
+  type        = string
+  description = "API Key"
 }
-
-variable "password" {
-    type=string
+variable "secretkey" {
+  type        = string
+  description = "Secret Key or file location"
 }
-
-variable "username" {
-    type=string
+variable "endpoint" {
+  type        = string
+  description = "API Endpoint URL"
+  default     = "https://www.intersight.com"
 }
-
-variable "database" {
-    type=string
-}
-
-variable "replicaSetKey" {
-    type=string
+variable "organization" {
+  type        = string
+  description = "Organization Name"
+  default     = "default"
 }
