@@ -2,17 +2,24 @@ terraform {
   required_providers {
     intersight = {
       source = "CiscoDevNet/intersight"
-      version = "1.0.5"
+      version = "1.0.6"
     }
   }
 }
+
+provider "intersight" {
+  apikey    = var.apikey
+  secretkey = var.secretkey
+  endpoint  = var.endpoint
+}
+
 
 locals {
     kube_config = yamldecode(base64decode(data.intersight_kubernetes_cluster.workshop.results[0].kube_config))
 }
 
 data "intersight_kubernetes_cluster" "workshop" {
-    name = "xavier-iks"
+    name = "IKS_Demo-cluster"
 }
 
 output "url" {
